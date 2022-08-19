@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block body %}
+<div class="formcard">
+<form action="/department/update/{{department.id}}" class="form" method="POST">
+  <input class="input" type="text" placeholder="Name" id="name" name="name"  value="{{department.name}}"/>
+  <input class="input" type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}

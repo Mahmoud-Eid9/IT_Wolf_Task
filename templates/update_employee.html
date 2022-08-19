@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block body %}
+<div class="formcard">
+<form action="/employee/update/{{employee.id}}" class="form" method="POST">
+  <input class="input" type="text" placeholder="Name" id="name" name="name"  value="{{employee.name}}"/>
+  <input class="input" type="text" placeholder="Title" id="title" name="title" value="{{employee.title}}" />
+  <!-- <input
+    class="input"
+    type="number"
+    placeholder="Department Id"
+    id="department_id"
+    name="department_id"
+    value="{{employee.department_id}}"
+  /> -->
+  <select name="department" class="input" value="{{employeeDep}} selected">
+    {% for item in department %}
+    {% if employeeDep == item.name %}
+    <option selected>{{item.name}}</option>
+    {% else %}
+    <option>{{item.name}}</option>
+    {% endif %}
+    {% endfor %}
+  </select>
+  <input
+    class="input"
+    type="number"
+    placeholder="Years of Experience"
+    id="years_of_exp"
+    name="years_of_exp"
+    value="{{employee.years_of_exp}}"
+  />
+  <input class="input" type="number" placeholder="Salary" id="salary" name="salary" value="{{employee.salary}}" />
+  <input class="input" type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}

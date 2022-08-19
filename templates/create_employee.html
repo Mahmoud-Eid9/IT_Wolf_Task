@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block body %}
+<div class="formcard">
+<form action="/employee" class="form" method="POST">
+  <input class="input" type="text" placeholder="Name" id="name" name="name" />
+  <input class="input" type="text" placeholder="Title" id="title" name="title" />
+  <!-- <input
+    class="input"
+    type="number"
+    placeholder="Department Id"
+    id="department_id"
+    name="department_id"
+  /> -->
+  <select name="department" class="input" selected">
+    {% for item in department %}
+    <option>{{item.name}}</option>
+    {% endfor %}
+  </select>
+  <input
+    class="input"
+    type="number"
+    placeholder="Years of Experience"
+    id="years_of_exp"
+    name="years_of_exp"
+  />
+  <input class="input" type="number" placeholder="Salary" id="salary" name="salary" />
+  <input class="input" type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}
